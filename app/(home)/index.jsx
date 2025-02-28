@@ -1,17 +1,23 @@
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { Link } from "expo-router"
+import { View, Text, StyleSheet, Pressable, ImageBackground } from "react-native";
+import { Link } from "expo-router";
+import Hero from "../../assets/images/tree-logo.png"
 
 const home = () => {
     return (
         <View style={styles.MainContainer}>
+            <ImageBackground
+                style={styles.HeroBackground}
+                source={Hero}
+
+            >
             <View style={styles.Container}>
                 <Text style={styles.ContainerTitle}>Tree of Life: A Mobile Application Game Promoting Walking for Improving Memory and Relaxation</Text>
 
                 <View style={styles.ContainerButton}>
                     <Link href={"/about"}>
                         <Pressable style={styles.ButtonStart}>
-                            <Text style={styles.ButtonText}>Start Game</Text>
+                            <Text style={styles.ButtonText}>START GAME</Text>
                         </Pressable>
                     </Link>
 
@@ -29,12 +35,18 @@ const home = () => {
                 </View>
 
             </View>
+            </ImageBackground>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     MainContainer: {
+        flex: 1,
+        
+       
+    },
+    HeroBackground: {
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
